@@ -1,5 +1,6 @@
 export { destinations, featuredEscapeIds, karnatakaDestinations } from './destinations';
 export { images, imageFallback, wikiImage } from './images';
+export { galleryImages } from './gallery';
 export {
   site,
   whatsappUrl,

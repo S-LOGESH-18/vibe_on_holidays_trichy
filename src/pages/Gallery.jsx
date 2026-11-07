@@ -1,69 +1,86 @@
-import { useMemo, useState } from 'react';
-import { FaInstagram } from 'react-icons/fa';
-import { galleryCategories, instagramPosts, site } from '../data';
-import { InstagramPhoneSlider, SectionHeading } from '../components';
-
-const imagePosts = instagramPosts.filter((post) => post.type === 'image');
+import { useEffect, useState } from 'react';
+import { galleryImages } from '../data';
+import { SectionHeading } from '../components';
 
 export function Gallery() {
-  const [category, setCategory] = useState('all');
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeImage = galleryImages[activeIndex];
 
-  const posts = useMemo(() => {
-    if (category === 'all') return imagePosts;
-    return imagePosts.filter((post) => post.category === category);
-  }, [category]);
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveIndex((index) => (index + 1) % galleryImages.length);
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
+  function selectImage(index) {
+    setActiveIndex(index);
+    document.getElementById('gallery-feature')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
+  }
 
   return (
     <main className="gallery-page">
       <section className="inner-hero gallery-page-hero">
-        <span className="eyebrow">
-          <FaInstagram /> {site.instagramHandle}
-        </span>
+        <span className="eyebrow">VIBE ON HOLIDAYS · TRICHY</span>
         <h1>
-          Instagram
-          <br />
-          <em>gallery</em>
+          Photo <em>gallery</em>
         </h1>
-        <p>
-          Photos from{' '}
-          <a href={site.instagram} target="_blank" rel="noreferrer">
-            {site.instagram}
-          </a>
-          . Browse the image gallery or open a photo on Instagram.
-        </p>
+        <p>Photos and memories from our journeys.</p>
       </section>
 
       <section className="section gallery-full">
         <SectionHeading
-          eyebrow="LIVE FROM THE FEED"
-          title="Browse the gallery"
-          subtitle="Photos from Vibe on Holidays Trichy."
+          eyebrow="PHOTO HIGHLIGHT"
+          title="Explore the photos"
+          subtitle="Enjoy the rotating highlights, or choose any photo from the collection below."
         />
 
-        <div className="gallery-filters">
-          {galleryCategories.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              className={category === item.id ? 'active' : ''}
-              onClick={() => setCategory(item.id)}
-            >
-              {item.label}
-            </button>
-          ))}
+        <div className="gallery-feature" id="gallery-feature">
+          <div className="gallery-feature-image-wrap" aria-live="polite">
+            <img
+              key={activeImage.id}
+              className="gallery-feature-image"
+              src={activeImage.src}
+              alt={`Vibe on Holidays gallery photo ${activeIndex + 1}`}
+            />
+          </div>
+          <div className="gallery-feature-caption" aria-live="polite">
+            <p>{activeImage.caption}</p>
+            <span>
+              {activeIndex + 1} / {galleryImages.length}
+            </span>
+          </div>
         </div>
 
-        <InstagramPhoneSlider posts={posts} />
+        <div className="gallery-collection-heading">
+          <SectionHeading
+            eyebrow="PHOTO COLLECTION"
+            title="All photos"
+            subtitle={`Browse ${galleryImages.length} photos. Select a photo to view it above.`}
+          />
+        </div>
 
-        <div className="ig-actions">
-          <a
-            className="btn btn-gold"
-            href={site.instagram}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaInstagram /> Open Instagram for more
-          </a>
+        <div className="gallery-image-grid">
+          {galleryImages.map((image, index) => (
+            <button
+              key={image.id}
+              className={`gallery-image-tile ${index === activeIndex ? 'active' : ''}`}
+              type="button"
+              aria-label={`Feature ${image.label}`}
+              aria-pressed={index === activeIndex}
+              onClick={() => selectImage(index)}
+            >
+              <img
+                src={image.src}
+                alt={`Vibe on Holidays gallery photo ${index + 1}`}
+                loading="lazy"
+              />
+            </button>
+          ))}
         </div>
       </section>
     </main>
