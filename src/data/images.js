@@ -1,5 +1,5 @@
 import fleetBanner from '../assets/updated.png';
-import fleetMobile from '../assets/Phone_bg.png';
+import fleetMobile from '../assets/fleet-mobile-updated.jpg';
 import comfortableTravelImg from '../assets/safe_travel_bus.png';
 import groupExperienceImg from '../assets/group_image.png';
 import safeTravelImg from '../assets/safe_travel.png';
