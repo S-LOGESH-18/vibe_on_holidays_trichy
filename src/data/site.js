@@ -14,7 +14,7 @@ export const site = {
   instagramHandle: '@vibe_on_holidays_trichy',
   email: '',
   address: 'No.1 Tollgate, Trichy',
-  serviceAreas: 'Trichy | Dindigul | TJV | CBE',
+  serviceAreas: 'Trichy | Dindigul | Thanjavur | Coimbatore',
 };
 
 export function whatsappUrl(message = '') {

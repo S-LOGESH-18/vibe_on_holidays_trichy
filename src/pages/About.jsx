@@ -185,7 +185,7 @@ export function About() {
                 No.1 Tollgate, Trichy
               </span>
             </div>
-            <Link className="btn btn-gold" to="/contact">
+            <Link className="btn btn-gold" to="/booking">
               Plan your trip <ArrowRight />
             </Link>
           </RiseIn>

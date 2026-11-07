@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import { FaInstagram, FaPhone } from 'react-icons/fa';
 import { MapPin, MessageCircle, Phone, Sparkles } from 'lucide-react';
-import { site, whatsappUrl } from '../data';
+import { site } from '../data';
 import { BookingForm, GlassCard, RiseIn, SectionHeading } from '../components';
 
 export function PlanBooking() {
@@ -47,9 +48,9 @@ export function PlanBooking() {
             <GlassCard className="lightning-tile">
               <FaPhone size={18} />
               <h4>WhatsApp Booking</h4>
-              <a href={whatsappUrl()} target="_blank" rel="noreferrer">
+              <Link to="/booking">
                 {site.phoneDisplay}
-              </a>
+              </Link>
             </GlassCard>
           </RiseIn>
           <RiseIn delay={0.3}>

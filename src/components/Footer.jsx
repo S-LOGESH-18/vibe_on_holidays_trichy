@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import { site, whatsappUrl } from '../data';
+import { site } from '../data';
 import { Logo } from './Logo';
 
 export function Footer() {
@@ -25,9 +25,9 @@ export function Footer() {
             >
               <FaInstagram />
             </a>
-            <a href={whatsappUrl()} aria-label="WhatsApp">
+            <Link to="/booking" aria-label="WhatsApp">
               <FaWhatsapp />
-            </a>
+            </Link>
           </div>
         </div>
         <div>
@@ -35,7 +35,7 @@ export function Footer() {
           <Link to="/">Home</Link>
           <Link to="/destinations">Destinations</Link>
           <Link to="/gallery">Gallery</Link>
-          <Link to={{ pathname: '/', hash: 'plan' }}>Book</Link>
+          <Link to="/booking">Book</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </div>
@@ -51,7 +51,7 @@ export function Footer() {
         <div>
           <h4>Contact Us</h4>
           <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
-          <a href={whatsappUrl()}>WhatsApp Booking</a>
+          <Link to="/booking">WhatsApp Booking</Link>
           <a href={site.instagram} target="_blank" rel="noreferrer">
             {site.instagramHandle}
           </a>
@@ -64,9 +64,9 @@ export function Footer() {
         </span>
         <span>{site.tagline}</span>
       </div>
-      <a className="wa-float" href={whatsappUrl()} aria-label="Chat on WhatsApp">
+      <Link className="wa-float" to="/booking" aria-label="Book your trip">
         <FaWhatsapp />
-      </a>
+      </Link>
     </footer>
   );
 }

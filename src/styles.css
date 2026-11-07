@@ -1065,8 +1065,8 @@
         max-width:1400px; margin:auto; padding:0 5% 100px; min-height:60vh
     }
 
-    .inner-page .karnataka-section {
-        padding:0 0 70px;
+    .inner-page .destination-region {
+        padding:70px 0 20px;
         max-width:none
     }
 
@@ -1683,6 +1683,10 @@
             gap:15px
         }
 
+        .inner-page .destination-grid {
+            grid-template-columns:repeat(2, minmax(0, 1fr))
+        }
+
         .featured-grid, .fleet-grid, .contact-band-grid {
             grid-template-columns:1fr 1fr
         }
@@ -1733,6 +1737,37 @@
     }
 
     @media(max-width:760px) {
+        .destinations-page {
+            background-image:linear-gradient(rgba(7, 9, 14, .72), rgba(7, 9, 14, .9)), url('../bg_bus.png'); background-position:center top; background-size:cover; background-attachment:fixed
+        }
+
+        .home-page,
+        .about-page,
+        .booking-page,
+        .confirmation {
+            background-image:linear-gradient(rgba(7, 9, 14, .72), rgba(7, 9, 14, .9)), url('../bg_bus.png'); background-position:center top; background-size:cover; background-attachment:fixed
+        }
+
+        .home-page .why-section {
+            background-color:transparent
+        }
+
+        .home-page .why-bg {
+            opacity:.55
+        }
+
+        .home-page .contact-band {
+            background:linear-gradient(180deg, rgba(7, 9, 14, .72), rgba(12, 16, 22, .82), rgba(7, 9, 14, .72))
+        }
+
+        .home-page .newsletter-wrap {
+            background-color:transparent
+        }
+
+        .destinations-page .inner-hero {
+            background:linear-gradient(180deg, rgba(8, 20, 31, .55), rgba(7, 9, 14, .48))
+        }
+
         .navbar {
             top:12px; padding:0 4%
         }
@@ -1912,6 +1947,10 @@
 
         .destination-grid, .package-grid, .journey-grid, .featured-grid, .fleet-grid, .contact-band-grid, .feature-grid-six, .contact-facts {
             grid-template-columns:1fr; gap:17px
+        }
+
+        .inner-page .destination-grid {
+            grid-template-columns:1fr
         }
 
         .card-image {

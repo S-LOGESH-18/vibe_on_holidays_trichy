@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import { MapPin, MessageCircle, Phone } from 'lucide-react';
 import { FaInstagram, FaPhone } from 'react-icons/fa';
-import { images, site, whatsappUrl } from '../data';
+import { images, site } from '../data';
 import { BookingForm } from '../components';
 
 export function Contact() {
@@ -29,9 +30,9 @@ export function Contact() {
           <a href={`tel:${site.phoneTel}`}>
             <Phone /> {site.phoneDisplay}
           </a>
-          <a href={whatsappUrl()}>
+          <Link to="/booking">
             <FaPhone /> WhatsApp {site.phoneDisplay}
-          </a>
+          </Link>
           <a href={site.instagram} target="_blank" rel="noreferrer">
             <FaInstagram /> {site.instagramHandle}
           </a>

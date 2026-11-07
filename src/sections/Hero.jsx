@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import { images, site, whatsappUrl } from '../data';
+import { images, site } from '../data';
+import busBackground from '../../bg_bus.png';
 
 export function Hero() {
   return (
@@ -12,7 +13,7 @@ export function Hero() {
       />
       <img
         className="hero-fleet-img hero-fleet-img-mobile"
-        src={images.fleetMobile}
+        src={busBackground}
         alt="Vibe On Holidays fleet"
       />
       <div className="hero-shade" />
@@ -32,9 +33,9 @@ export function Hero() {
             <Link className="btn btn-gold" to="/destinations">
               Explore Destinations
             </Link>
-            <a className="btn btn-glass" href={whatsappUrl()}>
+            <Link className="btn btn-glass" to="/booking">
               <FaWhatsapp /> Book on WhatsApp
-            </a>
+            </Link>
             <a
               className="btn btn-glass"
               href={site.instagram}
