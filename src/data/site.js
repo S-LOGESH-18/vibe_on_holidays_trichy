@@ -13,7 +13,7 @@ export const site = {
   instagram: 'https://www.instagram.com/vibe_on_holidays_trichy/',
   instagramHandle: '@vibe_on_holidays_trichy',
   email: '',
-  address: 'Trichy | Dindigul | TJV | CBE',
+  address: 'No.1 Tollgate, Trichy',
   serviceAreas: 'Trichy | Dindigul | TJV | CBE',
 };
 

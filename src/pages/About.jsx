@@ -1,23 +1,58 @@
 import { Link } from 'react-router-dom';
 import {
+  Activity,
   ArrowRight,
-  Clock3,
+  BedDouble,
+  BusFront,
   Compass,
   Heart,
   Leaf,
-  MapPinned,
+  MapPin,
   Mountain,
-  Route,
+  Phone,
   Users,
 } from 'lucide-react';
 import { images, site } from '../data';
 import { RiseIn } from '../components';
+import aboutContactImage from '../../image.png';
 
-const journeyStats = [
-  { value: '500+', label: 'Travellers', icon: Route },
-  { value: '50+', label: 'Trips completed', icon: Compass },
-  { value: '25+', label: 'Destinations', icon: MapPinned },
-  { value: '24/7', label: 'Planning', icon: Clock3 },
+const services = [
+  {
+    title: 'Activities',
+    icon: Activity,
+    items: [
+      'Off road Jeep Safari',
+      'DJ campfire',
+      'Trekking',
+      'Theme park',
+      'DJ Boating',
+      'Adventure & Water Sport Activities',
+    ],
+  },
+  {
+    title: 'Accommodation',
+    icon: BedDouble,
+    items: [
+      'Hotel',
+      'Resort',
+      'Cottage',
+      'Tent Stay',
+      'Camping',
+      'House Boat Stay',
+    ],
+  },
+  {
+    title: 'Transport',
+    icon: BusFront,
+    items: [
+      'DJ Floor Bus',
+      'DJ Floor Coach',
+      'Van',
+      'Tempo',
+      'Cab',
+      'Jeep',
+    ],
+  },
 ];
 
 export function About() {
@@ -40,13 +75,13 @@ export function About() {
             <Leaf /> A LITTLE ABOUT US
           </span>
           <h1>
-            YOUR TRAVEL STORY
+            VIBE ON HOLIDAYS
             <br />
-            <em>STARTS HERE</em>
+            <em>TRICHY</em>
           </h1>
           <p>
-            {site.tagline} — customised tour packages across the South region
-            from Trichy, Dindigul, Thanjavur and Coimbatore.
+            Feel the vibe, live the journey. Every trip becomes a beautiful
+            memory.
           </p>
         </div>
       </section>
@@ -62,24 +97,24 @@ export function About() {
           <RiseIn delay={0.12}>
             <span className="eyebrow">OUR MISSION</span>
             <h2>
-              Make travel simple,
+              Your trip, your way.
               <br />
-              <em>enjoyable, and personalized.</em>
+              <em>Made to be memorable.</em>
             </h2>
             <p>
-              Our goal is to make travel planning simple, enjoyable, and
-              personalized — whether you are looking for travel inspiration, a
-              family holiday, a group tour, or an adventure into the wild.
+              We are a young and dynamic team of tour operators who draw on our
+              own travels and experiences to make your trip unique. We believe
+              every tour should be customized around your expectations.
             </p>
             <div className="about-highlights">
               <span className="lightning-tile">
-                <Compass size={16} /> Travel inspiration
+                <Compass size={16} /> Planned from real travel experience
               </span>
               <span className="lightning-tile">
-                <Heart size={16} /> Personalized holiday experiences
+                <Heart size={16} /> Customized around you
               </span>
               <span className="lightning-tile">
-                <Users size={16} /> Group tours & family trips
+                <Users size={16} /> A dynamic team that cares
               </span>
               <span className="lightning-tile">
                 <Mountain size={16} /> Adventure travel
@@ -93,34 +128,72 @@ export function About() {
 
         <section className="about-journey">
           <RiseIn>
-            <span className="eyebrow">OUR JOURNEY</span>
+            <span className="eyebrow">OUR SERVICE</span>
             <h2>
-              Miles covered.
+              Everything for
               <br />
-              <em>Memories made.</em>
+              <em>a great getaway.</em>
             </h2>
             <p>
-              From first enquiry to the last drop-off, we plan every trip so
-              groups travel more, worry less, and vibe best.
+              Choose the experiences, stay, and transport that make your
+              holiday feel like yours.
             </p>
           </RiseIn>
 
-          <div className="about-stats">
-            {journeyStats.map((stat, index) => {
-              const Icon = stat.icon;
+          <div className="about-service-grid">
+            {services.map((service, index) => {
+              const Icon = service.icon;
               return (
-                <RiseIn key={stat.label} delay={index * 0.08}>
-                  <article className="about-stat-card lightning-tile">
-                    <span className="about-stat-icon">
+                <RiseIn key={service.title} delay={index * 0.08}>
+                  <article className="about-service-card lightning-tile">
+                    <span className="about-service-icon">
                       <Icon size={22} />
                     </span>
-                    <b>{stat.value}</b>
-                    <span>{stat.label}</span>
+                    <h3>{service.title}</h3>
+                    <ul>
+                      {service.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
                   </article>
                 </RiseIn>
               );
             })}
           </div>
+        </section>
+
+        <section className="about-contact">
+          <RiseIn>
+            <span className="eyebrow">EXPLORE WITH US</span>
+            <h2>
+              Let’s make your
+              <br />
+              <em>next trip a memory.</em>
+            </h2>
+            <p>Get in touch and let’s plan a journey that feels like you.</p>
+            <div className="about-contact-details">
+              <a href={`tel:${site.phoneTel}`}>
+                <Phone size={18} />
+                {site.phoneDisplay}
+              </a>
+              <a href={site.instagram} target="_blank" rel="noreferrer">
+                <span aria-hidden="true">@</span>
+                vibe_on_holidays_trichy
+              </a>
+              <span>
+                <MapPin size={18} />
+                No.1 Tollgate, Trichy
+              </span>
+            </div>
+            <Link className="btn btn-gold" to="/contact">
+              Plan your trip <ArrowRight />
+            </Link>
+          </RiseIn>
+          <img
+            className="about-contact-image"
+            src={aboutContactImage}
+            alt="Vibe On Holidays tour bus on the way to Kodaikanal"
+          />
         </section>
       </section>
     </main>
