@@ -30,10 +30,6 @@ function InstagramPhone({ post }) {
     return () => observer.disconnect();
   }, []);
 
-  const embedSrc = post.embed?.endsWith('/embed')
-    ? `${post.embed}/captioned`
-    : post.embed;
-
   return (
     <article className="ig-phone lightning-tile">
       <div
@@ -45,7 +41,7 @@ function InstagramPhone({ post }) {
           <img
             className="ig-phone-poster"
             src={post.image}
-            alt=""
+            alt={post.title}
             onError={() => setImgFailed(true)}
           />
         ) : (
@@ -53,19 +49,6 @@ function InstagramPhone({ post }) {
             <p>{post.title}</p>
           </div>
         )}
-        <iframe
-          className="ig-embed ig-embed-phone"
-          src={embedSrc}
-          title={post.title}
-          loading="lazy"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          style={{
-            width: IG_MIN_WIDTH,
-            height: IG_FRAME_HEIGHT,
-            transform: `translateX(-50%) scale(${scale})`,
-          }}
-        />
       </div>
       <a
         className="ig-phone-open"
@@ -113,7 +96,7 @@ export function InstagramPhoneSlider({ posts }) {
   }
 
   if (!posts?.length) {
-    return <p className="demo-note">No Instagram posts in this category yet.</p>;
+    return <p className="demo-note">No images in this category yet.</p>;
   }
 
   const start = page * pageSize + 1;

@@ -1,7 +1,6 @@
 import {
   DiscoverEscape,
   Hero,
-  InstagramGallery,
   JourneyPassion,
   PlanBooking,
   TravelSafe,
@@ -13,7 +12,6 @@ export function Home() {
       <Hero />
       <JourneyPassion />
       <DiscoverEscape />
-      <InstagramGallery />
       <TravelSafe />
       <PlanBooking />
     </>

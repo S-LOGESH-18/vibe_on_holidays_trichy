@@ -3,13 +3,13 @@
   "name": "Vibe on Holidays",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#050505",
-  "background_color": "#050505",
+  "theme_color": "#07090E",
+  "background_color": "#07090E",
   "icons": [
     {
-      "src": "/logo192.jpg",
+      "src": "/logo192.png",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/png"
     },
     {
       "src": "/logo512.png",

@@ -2,9 +2,6 @@ export const galleryCategories = [
   { id: 'all', label: 'All' },
   { id: 'bus', label: 'Bus' },
   { id: 'tempo', label: 'Tempo Traveller' },
-  { id: 'ads', label: 'Advertisement' },
-  { id: 'videos', label: 'Videos' },
-  { id: 'intro', label: 'Bus Intro' },
   { id: 'trips', label: 'Trips' },
 ];
 

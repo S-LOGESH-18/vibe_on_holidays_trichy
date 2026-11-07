@@ -3,13 +3,15 @@ import { FaInstagram } from 'react-icons/fa';
 import { galleryCategories, instagramPosts, site } from '../data';
 import { InstagramPhoneSlider, SectionHeading } from '../components';
 
+const imagePosts = instagramPosts.filter((post) => post.type === 'image');
+
 export function Gallery() {
   const [category, setCategory] = useState('all');
 
   const posts = useMemo(() => {
-    if (category === 'all') return instagramPosts;
-    return instagramPosts.filter((post) => post.category === category);
-  }, [category]);
+    if (category === 'all') return imagePosts;
+    return imagePosts.filter((post) => post.category === category);
+  }, [category, imagePosts]);
 
   return (
     <main className="gallery-page">
@@ -23,20 +25,19 @@ export function Gallery() {
           <em>gallery</em>
         </h1>
         <p>
-          Posts, reels and ads pulled from{' '}
+          Photos from{' '}
           <a href={site.instagram} target="_blank" rel="noreferrer">
             {site.instagram}
           </a>
-          . Phone tiles stay readable on mobile — tap through for the next
-          set, or open a post on Instagram.
+          . Browse the image gallery or open a photo on Instagram.
         </p>
       </section>
 
       <section className="section gallery-full">
         <SectionHeading
           eyebrow="LIVE FROM THE FEED"
-          title="Browse the feed"
-          subtitle="These are Instagram posts from Vibe on Holidays Trichy — tap a reel to play it."
+          title="Browse the gallery"
+          subtitle="Photos from Vibe on Holidays Trichy."
         />
 
         <div className="gallery-filters">

@@ -13,6 +13,7 @@ export function Logo({ small = false }) {
         src={images.logo}
         alt={site.fullName}
       />
+      <span className="brand-name">{site.fullName}</span>
     </Link>
   );
 }

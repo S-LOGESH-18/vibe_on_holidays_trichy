@@ -66,6 +66,10 @@
         width:auto; height:52px; max-width:none; display:block; border-radius:0; object-fit:contain; background:transparent
     }
 
+    .brand-name {
+        max-width:none; color:#fff; font-size:14px; font-weight:700; letter-spacing:.06em; line-height:1.15; text-transform:uppercase; white-space:nowrap
+    }
+
     .footer-brand .brand-logo {
         height:72px
     }
@@ -79,7 +83,7 @@
     }
 
     .nav-inner {
-        max-width:1320px; width:100%; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:20px; background:rgba(0, 0, 0, .82); backdrop-filter:blur(18px); border:1px solid rgba(143, 208, 255, .16); border-radius:999px; padding:8px 28px 8px 12px; box-shadow:0 16px 40px rgba(0, 0, 0, .55)
+        max-width:1320px; width:100%; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:20px; background:transparent; backdrop-filter:none; border:1px solid #fff; border-radius:999px; padding:8px 28px 8px 12px; box-shadow:none
     }
 
     .nav-links {
@@ -1669,6 +1673,10 @@
 
         .brand-logo {
             height:44px
+        }
+
+        .brand-name {
+            max-width:none; font-size:11px
         }
 
         .nav-actions {
