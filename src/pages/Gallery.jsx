@@ -11,7 +11,7 @@ export function Gallery() {
   const posts = useMemo(() => {
     if (category === 'all') return imagePosts;
     return imagePosts.filter((post) => post.category === category);
-  }, [category, imagePosts]);
+  }, [category]);
 
   return (
     <main className="gallery-page">
