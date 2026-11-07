@@ -167,7 +167,7 @@ export function Booking() {
               />
             </label>
             <label className="full-field">
-              From Trichy to
+              Your Destinations
               <select
                 value={form.destination}
                 onChange={(event) => update('destination', event.target.value)}
