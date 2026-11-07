@@ -110,7 +110,7 @@ export function BookingForm({ className = '' }) {
           />
         </label>
         <label className="full-field">
-          From Trichy to
+          Your Destination
           <select
             required
             value={form.destination}
