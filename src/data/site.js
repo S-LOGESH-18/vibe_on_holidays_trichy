@@ -1,10 +1,10 @@
 export const site = {
-  name: 'Vibe on Holidays',
+  name: 'Vibe_on_Holidays_Trichy',
   location: 'Trichy',
-  fullName: 'Vibe on Holidays – Trichy',
+  fullName: 'Vibe_on_Holidays_Trichy',
   role: 'Tour Agent',
   tagline: 'நீங்க வாங்க vibe- க்கு நாங்க',
-  quote: 'நீங்க வாங்க vibe- க்கு நாங்க',
+  quote: 'Vibe_on_Holidays_Trichy',
   slogan: 'Customised Tour Packages || South Region',
   packagesLine: 'Customised Tour Packages || South Region',
   phoneDisplay: '+91 85310 32030',
